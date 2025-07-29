@@ -55,7 +55,7 @@ const updateclick=async(req,res)=>{
 const postUri=async(req,res)=>{
     try{
         const {originalUrl,shortCode}=req.body;
-        const newUri=new uriModel({originalUrl, shortCode});
+        const newUri=new uriModel({originalUrl, shortCode, user: req.userId});
         
         //If originalUrl or shortCode is missing, return an error
         if(!originalUrl) {
